@@ -37,7 +37,7 @@ class App extends Component {
           <Button onClick={this.onButtonClick}>Default</Button>
           <Button primary onClick={this.onButtonClick}>Primary</Button>
           <Button danger onClick={this.onButtonClick}>Danger</Button>
-          <Button success onClick={this.onButtonClick}>success</Button>
+          <Button success onClick={this.onButtonClick}>Success</Button>
           <Button info onClick={this.onButtonClick}>Info</Button>
           <LogMessage message={logForButton} />
         </section>
