@@ -3,7 +3,7 @@ export const buttonBackground = {
   primary: '#3E88E8',
   danger:  '#DB4343',
   success: '#65BC1E',
-  info:    '#89E4F4',
+  info:    '#27B9EA',
 };
 
 export const buttonColor = {
