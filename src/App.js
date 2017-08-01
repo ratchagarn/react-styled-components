@@ -50,11 +50,16 @@ class App extends Component {
           <h4>Gender</h4>
           <InputRadio name="gender" value="Male" onClick={this.onGenderChange}>Male</InputRadio>
           <InputRadio name="gender" value="Female" onClick={this.onGenderChange}>Female</InputRadio>
+          <InputRadio inline name="gender" value="Male" onClick={this.onGenderChange}>Male</InputRadio>
+          <InputRadio inline name="gender" value="Female" onClick={this.onGenderChange}>Female</InputRadio>
 
-          <h4>Language</h4>
+          <h4>Languages</h4>
           <InputCheckbox value="Thai" onChange={this.onPickLanguage}>Thai</InputCheckbox>
           <InputCheckbox value="English" onChange={this.onPickLanguage}>English</InputCheckbox>
           <InputCheckbox value="Japan" onChange={this.onPickLanguage}>Japan</InputCheckbox>
+          <InputCheckbox inline value="Chinese" onChange={this.onPickLanguage}>Chinese</InputCheckbox>
+          <InputCheckbox inline value="French" onChange={this.onPickLanguage}>French</InputCheckbox>
+          <InputCheckbox inline value="Indonesian" onChange={this.onPickLanguage}>Indonesian</InputCheckbox>
           <LogMessage message={logForInput} />
         </section>
       </Layout>
