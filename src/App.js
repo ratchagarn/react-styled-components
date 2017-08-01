@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import Layout from './components/Layout';
 import SectionTitle from './components/SectionTitle';
 import LogMessage from './components/LogMessage';
 import Button from './components/Button';
@@ -8,7 +9,7 @@ import Button from './components/Button';
 class App extends Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       logForButton: '',
     };
@@ -18,9 +19,9 @@ class App extends Component {
     const {
       logForButton,
     } = this.state;
-    
+
     return (
-      <div>
+      <Layout>
         <section>
           <SectionTitle>Button</SectionTitle>
           <Button onClick={this.onButtonClick}>Default</Button>
@@ -30,10 +31,10 @@ class App extends Component {
           <Button info onClick={this.onButtonClick}>Info</Button>
           <LogMessage message={logForButton} />
         </section>
-      </div>
+      </Layout>
     );
   }
-  
+
   onButtonClick = (event) => {
     const message = `You clicked "${event.target.innerHTML}" !`;
     this.setState({ 'logForButton': message });
