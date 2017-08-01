@@ -19,7 +19,7 @@ const Message = styled.div`
 
 const LogMessage = ({ message }) => {
   if (typeof message === 'object') {
-    const allMessages = message.map((m) => <p>{m}</p>);
+    const allMessages = message.map((m, i) => <p key={i}>{m}</p>);
     return <Message>{allMessages}</Message>;
   }
   else if (message) {
