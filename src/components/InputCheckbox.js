@@ -6,33 +6,31 @@ const InputCheckboxWrapper = styled.div`
   margin: 1em 0;
   padding-left: 24px;
 
-  label {
+  > label {
     user-select: none;
-  }
-
-  input {
-    display: none;
-    margin-right: 5px;
-
-    &:checked + div {
-      border-color: #2681E2;
-      background-color: #2681E2;
-
-      &:before {
-        opacity: 1;
-        transform: rotate(-45deg);
-      }
-      &:after {
-        opacity: 1;
-        transform: rotate(45deg);
-      }
-    }
   }
 `;
 
 const Input = styled.input.attrs({
   type: 'checkbox'
-})``;
+})`
+  display: none;
+  margin-right: 5px;
+
+  &:checked + div {
+    border-color: #2681E2;
+    background-color: #2681E2;
+
+    &:before {
+      opacity: 1;
+      transform: rotate(-45deg);
+    }
+    &:after {
+      opacity: 1;
+      transform: rotate(45deg);
+    }
+  }
+`;
 
 const BeautifulInput = styled.div`
   position: absolute;

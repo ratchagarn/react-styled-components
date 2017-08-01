@@ -6,25 +6,23 @@ const InputRadioWrapper = styled.div`
   margin: 1em 0;
   padding-left: 24px;
 
-  label {
+  > label {
     user-select: none;
-  }
-
-  input {
-    display: none;
-    margin-right: 5px;
-
-    &:checked + div {
-      &:after {
-        opacity: 1;
-      }
-    }
   }
 `;
 
 const Input = styled.input.attrs({
   type: 'radio'
-})``;
+})`
+  display: none;
+  margin-right: 5px;
+
+  &:checked + div {
+    &:after {
+      opacity: 1;
+    }
+  }
+`;
 
 const BeautifulInput = styled.div`
   position: absolute;
