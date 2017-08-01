@@ -31,6 +31,7 @@ class App extends Component {
 
     return (
       <Layout>
+        <h1>Playground for styled-components</h1>
         <section>
           <SectionTitle>Button</SectionTitle>
           <Button onClick={this.onButtonClick}>Default</Button>
