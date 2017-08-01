@@ -15,6 +15,8 @@ const hoverBackgroundColor = (colorSet) => {
 }
 
 const Button = styled.button`
+  display: inline-block;
+  min-width: 80px;
   margin: 2px;
   padding: 1em 2em;
   border: 1px solid ${borderColor(buttonBackground)};
