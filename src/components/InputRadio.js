@@ -6,6 +6,10 @@ const InputRadioWrapper = styled.div`
   margin: 1em 0;
   padding-left: 24px;
 
+  label {
+    user-select: none;
+  }
+
   input {
     display: none;
     margin-right: 5px;
