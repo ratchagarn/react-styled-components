@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "polished": "^1.3.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-scripts": "1.0.10"
@@ -14,7 +15,6 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "styled-components": "^2.1.1",
-    "styled-props": "^1.0.0"
+    "styled-components": "^2.1.1"
   }
 }
