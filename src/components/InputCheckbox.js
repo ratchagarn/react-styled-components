@@ -3,7 +3,8 @@ import styled from 'styled-components';
 
 const InputCheckboxWrapper = styled.div`
   position: relative;
-  margin: 1em 0;
+  display: ${(props) => props.inline ? 'inline-block' : 'block'};
+  margin: ${(props) => props.inline ? '0 1em 0 0' : '1em 0'};
   padding-left: 24px;
 
   > label {
@@ -73,10 +74,10 @@ const BeautifulInput = styled.div`
 `;
 
 const InputCheckbox = (props) => {
-  const { children, ...inputProps } = props;
+  const { children, inline, ...inputProps } = props;
 
   return (
-    <InputCheckboxWrapper>
+    <InputCheckboxWrapper inline={inline}>
       <label>
         <Input {...inputProps} />
         <BeautifulInput />
