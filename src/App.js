@@ -14,6 +14,10 @@ class App extends Component {
     super(props);
 
     this.state = {
+      buttonText: '',
+      someMessage: '',
+      gender: '',
+      languages: [],
       logForButton: '',
       logForInput: '',
     };
@@ -39,17 +43,17 @@ class App extends Component {
         <section>
           <SectionTitle>Input</SectionTitle>
           <InputWrapper>
-            <InputText type="text" placeholder="Write somthing here..." onChange={this.onInputChange} />
+            <InputText type="text" placeholder="Write some message here..." onChange={this.onInputChange} />
           </InputWrapper>
 
           <h4>Gender</h4>
-          <InputRadio name="gender">Male</InputRadio>
-          <InputRadio name="gender">Female</InputRadio>
+          <InputRadio name="gender" value="Male" onClick={this.onGenderChange}>Male</InputRadio>
+          <InputRadio name="gender" value="Female" onClick={this.onGenderChange}>Female</InputRadio>
 
           <h4>Language</h4>
-          <InputCheckbox>Thai</InputCheckbox>
-          <InputCheckbox>English</InputCheckbox>
-          <InputCheckbox>Japan</InputCheckbox>
+          <InputCheckbox value="Thai" onChange={this.onPickLanguage}>Thai</InputCheckbox>
+          <InputCheckbox value="English" onChange={this.onPickLanguage}>English</InputCheckbox>
+          <InputCheckbox value="Japan" onChange={this.onPickLanguage}>Japan</InputCheckbox>
           <LogMessage message={logForInput} />
         </section>
       </Layout>
@@ -57,13 +61,57 @@ class App extends Component {
   }
 
   onButtonClick = (event) => {
-    const message = `You clicked "${event.target.innerHTML}" !`;
-    this.setState({ 'logForButton': message });
+    const buttonText = event.target.innerHTML;
+    const message = `You clicked "${buttonText}" !`;
+
+    this.setState({
+      buttonText,
+      'logForButton': message,
+    });
   }
 
   onInputChange = (event) => {
-    const message = `You write "${event.target.value}" !`;
-    this.setState({ 'logForInput': message });
+    const someMessage = event.target.value;
+    const message = [`You write "${someMessage}" !`];
+    const { gender, languages } = this.state;
+
+    if (gender) {
+      message.push(`Your gender is ${gender}`);
+    }
+
+    if (languages.length > 0) {
+      message.push(`Your can speak ${languages.length} language(s), ${languages.join(', ')}`);
+    }
+
+    this.setState({
+      someMessage,
+      'logForInput': message
+    });
+  }
+
+  onGenderChange = (event) => {
+    this.setState({ gender: event.target.value }, () => {
+      const { someMessage } = this.state;
+      this.onInputChange({ target: { value: someMessage } })
+    });
+  }
+
+  onPickLanguage = (event) => {
+    const languages = [ ...this.state.languages ];
+    const { target } = event;
+    const searchIndex = languages.indexOf(target.value);
+
+    if (target.checked && searchIndex === -1) {
+      languages.push(target.value);
+    }
+    else if (searchIndex > -1) {
+      languages.splice(searchIndex, 1);
+    }
+
+    this.setState({ languages }, () => {
+      const { someMessage } = this.state;
+      this.onInputChange({ target: { value: someMessage } })
+    });
   }
 };
 
