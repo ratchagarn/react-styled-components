@@ -55,7 +55,7 @@ const BeautifulInput = styled.div`
     background-color: white;
     opacity: 0;
     transform: rotate(0);
-    transition: .2s;
+    transition: .2s .1s;
   }
 
   :after {
@@ -70,7 +70,7 @@ const BeautifulInput = styled.div`
     background-color: white;
     opacity: 0;
     transform: rotate(0);
-    transition: .2s;
+    transition: .2s .1s;
   }
 `;
 
