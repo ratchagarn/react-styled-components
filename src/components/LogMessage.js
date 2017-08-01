@@ -5,8 +5,8 @@ const Message = styled.div`
   margin: 1em 0;
   padding: 1.2em;
   font-size: .8em;
-  border: 2px solid #AAA;
-  background-color: #F6F6F6;
+  border: 2px dashed #AAA;
+  background-color: #FCFCFC;
 
   > p {
     margin: 0 0 .5em 0;
