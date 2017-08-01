@@ -7,10 +7,27 @@ const Message = styled.div`
   font-size: .8em;
   border: 2px solid #AAA;
   background-color: #F6F6F6;
+
+  > p {
+    margin: 0 0 .5em 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 `;
 
 const LogMessage = ({ message }) => {
-  return message ? <Message>{message}</Message> : null;
+  if (typeof message === 'object') {
+    const allMessages = message.map((m) => <p>{m}</p>);
+    return <Message>{allMessages}</Message>;
+  }
+  else if (message) {
+    return <Message>{message}</Message>;
+  }
+  else {
+    return null;
+  }
 }
 
 export default LogMessage;
