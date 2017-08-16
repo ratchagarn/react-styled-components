@@ -8,6 +8,7 @@ import InputText, { InputWrapper } from './components/InputText';
 import InputRadio from './components/InputRadio';
 import InputCheckbox from './components/InputCheckbox';
 import FormBlock from './components/FormBlock';
+import MoneyFormat from './components/MoneyFormat';
 
 
 class App extends Component {
@@ -72,6 +73,12 @@ class App extends Component {
             </FormBlock>
           </form>
         </section>
+
+        <div>
+          <MoneyFormat currency="thb" amount={100} />
+          <MoneyFormat currency="usd" amount={100} />
+          <MoneyFormat currency="jpy" amount={100} />
+        </div>
       </Layout>
     );
   }
