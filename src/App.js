@@ -7,6 +7,7 @@ import Button from './components/Button';
 import InputText, { InputWrapper } from './components/InputText';
 import InputRadio from './components/InputRadio';
 import InputCheckbox from './components/InputCheckbox';
+import FormBlock from './components/FormBlock';
 
 
 class App extends Component {
@@ -61,6 +62,15 @@ class App extends Component {
           <InputCheckbox inline value="French" onChange={this.onPickLanguage}>French</InputCheckbox>
           <InputCheckbox inline value="Indonesian" onChange={this.onPickLanguage}>Indonesian</InputCheckbox>
           <LogMessage message={logForInput} />
+
+          <form>
+            <FormBlock label="Form block 1">
+              <InputText type="text" placeholder="Test input text 1..." />
+            </FormBlock>
+            <FormBlock label="Form block 2">
+              <InputText type="text" placeholder="Test input text 2..." />
+            </FormBlock>
+          </form>
         </section>
       </Layout>
     );
