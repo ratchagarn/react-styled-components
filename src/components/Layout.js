@@ -1,6 +1,6 @@
 import styled, { injectGlobal } from 'styled-components';
 
-injectGlobal`
+injectGlobal([`
   html {
     box-sizing: border-box;
   }
@@ -17,7 +17,7 @@ injectGlobal`
     font-family: Arial, Verdana, Tahoma;
     font-size: 16px;
   }
-`;
+`]);
 
 const Layout = styled.div`
   width: 95%;
